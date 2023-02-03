@@ -35,15 +35,58 @@ elForm.addEventListener("keyup", (e) => {
 })
 
 let arr = []
-const wolkswagen = document.getElementsByClassName("wolkswagen")
+const wolkswagen = document.querySelector(".wolkswagen")
 
-wolkswagen.addEventListener("change", () => {
-    let base = database.map(function (item) {
-        if (item.company === "Volkswagen") {
-            console.log(item);
+wolkswagen.addEventListener("click", () => {
+    let base = database.filter(function (item) {
+        if (item.company === "Volkswagen" || item.company === "Hyundai") {
+            return item
         }
     })
-console.log(base);
+
+    console.log(base);
+    elCards.innerHTML = null;
+    render(base)
+})
+
+const BYD = document.querySelector(".BYD")
+
+BYD.addEventListener("click", () => {
+    let base = database.filter(function (item) {
+        if (item.company === "BYD") {
+            return item
+        }
+    })
+
+    console.log(base);
+    elCards.innerHTML = null;
+    render(base)
+})
+
+const Chevrolet = document.querySelector(".Chevrolet")
+
+Chevrolet.addEventListener("click", () => {
+    let base = database.filter(function (item) {
+        if (item.company === "Chevrolet") {
+            return item
+        }
+    })
+
+    console.log(base);
+    elCards.innerHTML = null;
+    render(base)
+})
+
+const FAW = document.querySelector(".FAW")
+
+FAW.addEventListener("click", () => {
+    let base = database.filter(function (item) {
+        if (item.company === "FAW") {
+            return item
+        }
+    })
+
+    console.log(base);
     elCards.innerHTML = null;
     render(base)
 })
